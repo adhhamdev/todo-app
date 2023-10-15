@@ -16,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <footer>
+          <p><small>&copy Copyright {new Date().getFullYear()} 2023 | Adhham Dev | All rights reserved</small></p>
+        </footer>
+        </body>
     </html>
   )
 }
