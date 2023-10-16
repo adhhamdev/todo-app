@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #eef;
+    background-image: url(/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.container {
+    margin: 10px 20px;
+    max-width: 800px;
+    width: 800px;
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* .container > * {
+    border: 1px solid;
+} */
+
+.container .topbar {
+    margin-bottom: 10px;
+}
+
+.container .topbar h1 {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(45deg, tomato, purple, darkblue);
+}
+
+.container .starter form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .starter form fieldset {
+    display: flex;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 0 5px;
+    transition: .3s;
+}
+.container .starter form fieldset:focus-within {
+    border: 2px solid #000;
+}
+
+.container .starter form legend {
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+.container .starter form input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    margin-right: 10px;
+}
+
+.container .starter form button {
+    display: grid;
+    place-items: center;
+    margin-top: 6px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, purple, tomato);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.container .starter form button:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+.container .starter form button:active {
+    background: #789;
+}
+
+.container .tagList {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin: 10px 0;
+    padding: 5px;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    margin-bottom: 10px;
+}
+
+.container .tagList .tag {
+    display: grid;
+    place-items: center;
+    min-width: 140px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    color: #555;
+    background: #ddd;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .tagList .tag:hover {
+    background-color: rgba(255, 99, 71, 0.242);
+}
+
+.container .tagList .tag.active {
+    color: #fff;
+    background: linear-gradient(45deg, red, tomato);
+}
+
+.container h2 {
+    margin-bottom: 10px;
+    color: #456;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container .TaskList {
+    border: none;
+    display: grid;
+    grid-auto-rows: 60px;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 5px 10px 10px 5px;
+    scroll-behavior: smooth;
+}
+
+.container .TaskList .task {
+    display: grid;
+    grid-template-areas: 
+    "content time status"
+    "tag time status";
+    grid-template-columns: 2fr 1fr 15%;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: .3s;
+}
+.container .TaskList .task:hover {
+    scale: 1.005;
+    box-shadow: 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container .TaskList .task .content {
+    grid-area: content;
+    width: 100%;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container .TaskList .task .time {
+    grid-area: time;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+    color: #555;
+}
+
+.container .TaskList .task .status {
+    grid-area: status;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container .TaskList .task .status .checkIcon, .deleteIcon {
+    height: 28px;
+}
+
+.container .TaskList .task .status .deleteIcon:hover {
+    color: red;
+}
+.container .TaskList .task .status .checkIcon:hover {
+    color: limegreen;
+}
+
+.container .TaskList .task .tag {
+    grid-area: tag;
+    font-size: .9rem;
+    color: #555;
+}
+
+footer {
+    color: #fff;
+}
+
+::-webkit-scrollbar, .container .TaskList::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb, .container .list::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #ddd;
+}
+::-webkit-scrollbar-thumb:active, .container .list::-webkit-scrollbar-thumb:active {
+    background: #234;
+}

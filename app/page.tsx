@@ -1,5 +1,5 @@
-import AddTaskBtn from "@/components/AddTaskBtn";
-import TaskStatus from "@/components/TaskStatus";
+import TaskList from "@/components/TaskList";
+import TaskEntry from "@/components/TaskEntry";
 
 export default function Home() {
   return (
@@ -7,25 +7,15 @@ export default function Home() {
       <div className="container">
         <div className="topbar">
           <h1>To-Do</h1>
-          <form>
-            <fieldset>
-              <legend>New Task</legend>
-              <input type="text" name="new-task" id="task" placeholder="What are you upto?" autoFocus autoComplete="on" />
-              <input type="text" name="new-task-tag" id="task-tag" placeholder="# Tag name..." autoFocus autoComplete="on" />
-              <AddTaskBtn />
-            </fieldset>
-          </form>
         </div>
-        <div className="list">
-          <div className="task">
-            <div className="content">
-              <p className="name">
-                Name of the Task
-              </p>
-             <TaskStatus />
-            </div>
-          </div>
+        <div className="starter">
+          <TaskEntry />
         </div>
+        <div className="tagList">
+          <button className="tag active">Category 1</button>
+        </div>
+        <h2>Tasks</h2>
+        <TaskList />
       </div>
     </main>
   )
