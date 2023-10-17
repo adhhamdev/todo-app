@@ -13,12 +13,16 @@ const List = () => {
     ])
     useEffect(() => {
         const getLocalData = () => {
-            const data = JSON.parse(localStorage.getItem("data"));
-            if(!data) localStorage.setItem("data", JSON.stringify([]))
-            setList(data)
+            const jsonData = localStorage.getItem("data")
+            if(jsonData === null) {
+                localStorage.setItem("data", JSON.stringify([]))
+            } else {
+                const data = JSON.parse(jsonData);
+                setList(data)
+            }
         }
         getLocalData();
-    })
+    }, [list])
     return (
         <div className="TaskList">
           {list.map((task) => (
