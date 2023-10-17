@@ -2,7 +2,14 @@
 import { useState } from "react";
 import AddTaskBtn from "./AddTaskBtn";
 import { Play, Hash } from "react-feather";
-const TaskEntry = ({setList, list}) => {
+import React from "react";
+
+interface TaskEntryProps {
+  setList: React.Dispatch<React.SetStateAction<{ id: number; name: string; tag: string; time: string; checked: boolean }[]>>;
+  list: { id: number; name: string; tag: string; time: string; checked: boolean }[];
+}
+
+const TaskEntry: React.FC<TaskEntryProps> = ({ setList, list }) => {
     const [taskReg, setTaskReg] = useState({
         name: "",
         tag: ""

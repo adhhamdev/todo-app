@@ -1,6 +1,18 @@
 import { useState } from "react";
 import { Circle, CheckCircle, Trash } from "react-feather"
-const TaskStatus = ({task, list, setList}) => {
+type Task = {
+    id: number;
+    name: string;
+    checked: boolean;
+};
+
+type Props = {
+    task: Task;
+    list: Task[];
+    setList: React.Dispatch<React.SetStateAction<Task[]>>;
+};
+
+const TaskStatus = ({ task, list, setList }: Props) => {
     const [checked, setChecked] = useState(false)
     const handleCheck = () => {
         setChecked(prev => !prev)
