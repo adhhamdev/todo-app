@@ -200,7 +200,7 @@ body {
     color: red;
 }
 .container .TaskList .task .status .checkIcon:hover {
-    color: limegreen;
+    color: #32cd32;
 }
 
 .container .TaskList .task .tag {

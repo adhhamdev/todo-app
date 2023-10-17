@@ -1,6 +1,6 @@
 import TaskStatus from "./TaskStatus";
 
-const Task = ({task}) => {
+const Task = ({task, list, setList}) => {
     return (
         <div className="task">
             <div className="content">
@@ -11,7 +11,7 @@ const Task = ({task}) => {
             <div className="time">
               {task.time}
             </div>
-            <TaskStatus task={task} />
+            <TaskStatus list={list} task={task} setList={setList} />
             <p className="tag">{task.tag}</p>
           </div>
     );
